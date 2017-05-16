@@ -37,6 +37,10 @@
     {
       "type": "composer",
       "url": "https://asset-packagist.org"
+    },
+    {
+      "type": "path",
+      "url": "../hmcc-craft-json"
     }
   ]
 }
