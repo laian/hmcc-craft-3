@@ -7,7 +7,7 @@
  */
 
 return array(
-	'server' => 'db.hmcc.net',
+	'server' => 'mysql.hmcc.net',
  	'user' => 'hmcc_web',
  	'password' => 'mGoBlue!',
  	'database' => 'hmcc_craft',
