@@ -6,12 +6,10 @@
  * list of the default settings in `vendor/craftcms/cms/src/config/defaults/db.php`.
  */
 
-$url = getenv('JAWSDB_URL');
-$dbparts = parse_url($url);
 return array(
-  'server' => $dbparts['host'],
-  'user' => $dbparts['user'],
-  'password' => $dbparts['pass'],
-  'database' => ltrim($dbparts['path'],'/'),
-  'tablePrefix' => 'craft',
+	'server' => 'db.hmcc.net',
+ 	'user' => 'hmcc_web',
+ 	'password' => 'mGoBlue!',
+ 	'database' => 'hmcc_craft',
+	'tablePrefix' => 'craft',
 );
