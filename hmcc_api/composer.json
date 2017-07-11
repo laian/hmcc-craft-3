@@ -1,6 +1,6 @@
 {
-  "name": "HMCC/API",
-  "description": "HMCC JSON API",
+  "name": "hmcc/api",
+  "description": "hmcc json api",
   "version": "1.0.0",
   "type": "craft-plugin",
   "minimum-stability": "dev",
@@ -16,8 +16,8 @@
     "email": "annarbor@hmcc.net"
   },
   "extra": {
-    "handle": "HMCC-API",
-    "name": "HMCC API",
+    "handle": "hmcc-api",
+    "name": "hmcc api",
     "developer": "HMCC Web Team",
     "developerUrl": "hmcc.net"
   }

@@ -18,7 +18,7 @@
     "docs": "https://craftcms.com/docs",
     "rss": "https://craftcms.com/changelog.rss"
   },
-  "minimum-stability": "beta",
+  "minimum-stability": "dev",
   "require": {
     "php": ">=7.0.0",
     "craftcms/cms": "^3.0.0-beta.10",
@@ -26,7 +26,8 @@
     "vlucas/phpdotenv": "^2.4.0",
     "roave/security-advisories": "dev-master",
     "ext-mbstring": "*",
-    "ext-gd": "*"
+    "ext-gd": "*",
+    "hmcc/api": "^1.0"
   },
   "scripts": {
     "post-root-package-install": [
@@ -40,7 +41,7 @@
     },
     {
       "type": "path",
-      "url": "/hmcc_api"
+      "url": "./hmcc_api"
     }
   ]
 }

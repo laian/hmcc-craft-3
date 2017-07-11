@@ -4,8 +4,37 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ea0d4da8dc2cf112e57897483a57a8d9",
+    "content-hash": "2e40d48669ebcff99ed06942423bada0",
     "packages": [
+        {
+            "name": "HMCC/API",
+            "version": "1.0.0",
+            "dist": {
+                "type": "path",
+                "url": "./hmcc_api",
+                "reference": "67b1eb9495ce7d09c2429b5792c3d97bfcb3a256",
+                "shasum": null
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0-alpha.1"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "handle": "HMCC-API",
+                "name": "HMCC API",
+                "developer": "HMCC Web Team",
+                "developerUrl": "hmcc.net"
+            },
+            "autoload": {
+                "psr-4": {
+                    "HMCC\\API\\": "src/"
+                }
+            },
+            "description": "HMCC JSON API",
+            "support": {
+                "email": "annarbor@hmcc.net"
+            }
+        },
         {
             "name": "bower-asset/bootstrap",
             "version": "v3.3.7",
@@ -2764,9 +2793,8 @@
     ],
     "packages-dev": [],
     "aliases": [],
-    "minimum-stability": "beta",
+    "minimum-stability": "dev",
     "stability-flags": {
-        "craftcms/cms": 10,
         "roave/security-advisories": 20
     },
     "prefer-stable": false,
