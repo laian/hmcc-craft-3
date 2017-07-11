@@ -1,0 +1,24 @@
+{
+  "name": "HMCC/API",
+  "description": "HMCC JSON API",
+  "version": "1.0.0",
+  "type": "craft-plugin",
+  "minimum-stability": "dev",
+  "require": {
+    "craftcms/cms": "^3.0.0-alpha.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "HMCC\\API\\": "src/"
+    }
+  },
+  "support": {
+    "email": "annarbor@hmcc.net"
+  },
+  "extra": {
+    "handle": "HMCC-API",
+    "name": "HMCC API",
+    "developer": "HMCC Web Team",
+    "developerUrl": "hmcc.net"
+  }
+}

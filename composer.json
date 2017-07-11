@@ -40,7 +40,7 @@
     },
     {
       "type": "path",
-      "url": "../hmcc-craft-json"
+      "url": "/hmcc_api"
     }
   ]
 }
