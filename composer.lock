@@ -696,11 +696,11 @@
         },
         {
             "name": "craft/cereal",
-            "version": "1.0.2",
+            "version": "1.0.3",
             "dist": {
                 "type": "path",
                 "url": "./cereal",
-                "reference": "214b1d488bc49cad7ca9df0567207fda65e7d021",
+                "reference": "767f1757fb31e5faabd5bf519b07d6fb98f08274",
                 "shasum": null
             },
             "require": {
