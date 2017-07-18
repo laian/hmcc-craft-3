@@ -1,8 +1,10 @@
 <?php
 
-namespace Cereal\Api;
+namespace craft\cereal\api;
 
-class Converter_ApiController extends BaseController
+use Craft;
+
+class ApiController extends Controller
 {
   protected $allowAnonymous = true;
 

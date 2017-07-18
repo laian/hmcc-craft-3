@@ -1,7 +1,7 @@
 <?php
-namespace Cereal;
+namespace craft\cereal;
 
-class Cereal extends \craft\base\Plugin
+class Plugin extends \craft\base\Plugin
 {
     public function init()
     {

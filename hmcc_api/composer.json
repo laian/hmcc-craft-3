@@ -9,7 +9,7 @@
   },
   "autoload": {
     "psr-4": {
-      "HMCC\\API\\": "src/"
+      "craft\\cereal\\": "src/"
     }
   },
   "support": {
