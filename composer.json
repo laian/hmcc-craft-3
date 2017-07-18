@@ -27,7 +27,7 @@
     "roave/security-advisories": "dev-master",
     "ext-mbstring": "*",
     "ext-gd": "*",
-    "hmcc/api": "^1.0"
+    "craft/cereal": "^1.0"
   },
   "scripts": {
     "post-root-package-install": [
@@ -41,7 +41,7 @@
     },
     {
       "type": "path",
-      "url": "./hmcc_api"
+      "url": "./cereal"
     }
   ]
 }

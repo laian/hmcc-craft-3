@@ -1,5 +1,5 @@
 {
-  "name": "cereal",
+  "name": "craft/cereal",
   "description": "cereal api",
   "version": "1.0.0",
   "type": "craft-plugin",
