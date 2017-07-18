@@ -29,9 +29,8 @@ class ApiController extends Controller
     }
   */
   {
-    $criteria = Craft::$app->elements->getCriteria(Entry);
-    $relatedSchemas = array_key_exists("related", $schema) ? 
-      $schema["related"] : null;
+    $criteria = Craft::$app->elements->getCriteria();
+    $relatedSchemas = array_key_exists("related", $schema) ? $schema["related"] : null;
     if($relatedSchemas)
       unset($schema->related);
     foreach($schema as $key => $value)
