@@ -15,7 +15,7 @@ class ApiController extends Controller
   }
 }
 
-public function schemaToArray(array $schema, $relatedEntryModel = null)
+function schemaToArray(array $schema, $relatedEntryModel = null)
 /* example schema:
   {
     section: "series",
