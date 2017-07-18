@@ -2,6 +2,7 @@
 
 namespace craft\cereal\controllers;
 
+use Craft;
 use craft\web\Controller;
 
 class ApiController extends Controller
