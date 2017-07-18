@@ -1,6 +1,6 @@
 {
-  "name": "hmcc/api",
-  "description": "hmcc json api",
+  "name": "cereal",
+  "description": "cereal api",
   "version": "1.0.0",
   "type": "craft-plugin",
   "minimum-stability": "dev",
@@ -16,8 +16,8 @@
     "email": "annarbor@hmcc.net"
   },
   "extra": {
-    "handle": "hmcc-api",
-    "name": "hmcc api",
+    "handle": "cereal",
+    "name": "Cereal",
     "developer": "HMCC Web Team",
     "developerUrl": "hmcc.net"
   }

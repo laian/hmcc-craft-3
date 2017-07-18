@@ -1,7 +1,7 @@
 <?php
-namespace HMCC\API;
+namespace Cereal;
 
-class Plugin extends \craft\base\Plugin
+class Cereal extends \craft\base\Plugin
 {
     public function init()
     {
@@ -9,4 +9,4 @@ class Plugin extends \craft\base\Plugin
 
         // Custom initialization code goes here...
     }
-}
+}	
