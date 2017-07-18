@@ -3,6 +3,8 @@
 namespace craft\cereal\controllers;
 
 use Craft;
+
+use craft\element\Entry;
 use craft\web\Controller;
 
 class ApiController extends Controller
@@ -27,7 +29,7 @@ class ApiController extends Controller
     }
   */
   {
-    $criteria = Craft::$app->elements->getCriteria(ElementType::Entry);
+    $criteria = Craft::$app->elements->getCriteria(Entry);
     $relatedSchemas = array_key_exists("related", $schema) ? 
       $schema["related"] : null;
     if($relatedSchemas)
