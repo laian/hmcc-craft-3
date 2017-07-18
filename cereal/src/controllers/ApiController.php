@@ -1,6 +1,6 @@
 <?php
 
-namespace craft\cereal\api;
+namespace craft\cereal\controllers;
 
 use craft\web\Controller;
 
