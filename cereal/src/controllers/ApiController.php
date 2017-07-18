@@ -4,7 +4,7 @@ namespace craft\cereal\api;
 
 use Craft;
 
-class ApiController extends Controller
+class Controller extends Controller
 {
   protected $allowAnonymous = true;
 
