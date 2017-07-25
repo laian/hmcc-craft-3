@@ -30,7 +30,7 @@ class ApiController extends Controller
     }
   */
   {
-    $criteria = ElementCriteria($schema->section);
+    $criteria = ElementQuery($schema->section);
     $relatedSchemas = array_key_exists("related", $schema) ? $schema["related"] : null;
     if($relatedSchemas)
       unset($schema->related);
@@ -41,7 +41,7 @@ class ApiController extends Controller
     if($relatedEntryModel)
       $criteria->relatedTo = $relatedEntryModel;
     
-    $entryModels = $criteria->find();
+    $entryModels = $criteria->all();
     $arrays = array();
 
     foreach($entryModels as $entryModel)
