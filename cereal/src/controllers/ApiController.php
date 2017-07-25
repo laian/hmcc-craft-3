@@ -6,7 +6,7 @@ use Craft;
 
 use craft\element\Entry;
 use craft\web\Controller;
-use craft\elements\db\ElementQuery;
+use craft\elements\db\ElementQuery as ElementQuery;
 
 class ApiController extends Controller
 {
