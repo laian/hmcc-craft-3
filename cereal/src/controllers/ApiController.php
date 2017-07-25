@@ -15,7 +15,7 @@ class ApiController extends Controller
   public function actionGet()
   {
     $schema = Craft::$app->request->get("schema");
-    $this->returnJson($schema)
+    $this->returnJson($schema);
 
     //$this->returnJson($this->schemaToArray($schema));
   }
