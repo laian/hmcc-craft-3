@@ -19,7 +19,7 @@ class ApiController extends Controller
     return $this->asJson($this->schemaToArray($schema));
   }
 
-  function schemaToArray(array $schema, $relatedEntryModel = null)
+  function schemaToArray(array $schema, $relatedEntry = null)
   /* example schema:
     {
       section: "series",
@@ -40,22 +40,22 @@ class ApiController extends Controller
     {
       $entryQuery->$key = $value;
     }
-    if($relatedEntryModel)
-      $entryQuery->relatedTo = $relatedEntryModel;
+    if($relatedEntry)
+      $entryQuery->relatedTo = $relatedEntry;
     
-    $entryModels = $entryQuery->all();
-    // $entryModels = Entry::find()->configure($schema);
+    $entries = $entryQuery->all();
+    // $entries = Entry::find()->configure($schema);
     $arrays = array();
 
-    foreach($entryModels as $entryModel)
+    foreach($entries as $entry)
     {
-      $array = $this->entryModelToArray($entryModel);
+      $array = $this->entryModelToArray($entry);
       if($relatedSchemas)
       {
         foreach($relatedSchemas as $relatedSchema)
         {
           $relatedSection = $relatedSchema["section"];
-          $array[$relatedSection] = $this->schemaToArray($relatedSchema, $entryModel);
+          $array[$relatedSection] = $this->schemaToArray($relatedSchema, $entry);
         }
       }
       $arrays[] = $array;
@@ -64,12 +64,12 @@ class ApiController extends Controller
     return $arrays;
   }
 
-  function entryModelToArray(EntryModel $entryModel)
+  function entryModelToArray(Entry $entry)
   {
     $array = array();
-    $array["title"] = $entryModel->title;
-    $array["id"] = $entryModel->id;
-    foreach ($entryModel->getFieldLayout()->getFields() as $fieldLayout)
+    $array["title"] = $entry->title;
+    $array["id"] = $entry->id;
+    foreach ($entry->getFieldLayout()->getFields() as $fieldLayout)
     {
       $field = $fieldLayout->getField();
       $handle = $field->getAttributes()["handle"];
@@ -77,7 +77,7 @@ class ApiController extends Controller
       switch ($type) {
         case "Entries":
           // need to handle multiple
-          $entries = $entryModel->$handle->find();
+          $entries = $entry->$handle->find();
           if (count($entries))
           {
             $array[$handle] = array_map(
@@ -90,7 +90,7 @@ class ApiController extends Controller
           }
           break;
         case "Assets":
-          $assets = $entryModel->$handle->find();
+          $assets = $entry->$handle->find();
           if (count($assets))
           {
             $array[$handle] = array_map(
@@ -103,7 +103,7 @@ class ApiController extends Controller
           }
           break;
         case "Tags":
-          $tags = $entryModel->$handle->find();
+          $tags = $entry->$handle->find();
           if (count($tags))
           {
             $array[$handle] = array_map(
@@ -116,7 +116,7 @@ class ApiController extends Controller
           }
           break;
         case "Categories":
-          $categories = $entryModel->$handle->find();
+          $categories = $entry->$handle->find();
           if (count($categories))
           {
             $array[$handle] = array_map(
@@ -129,10 +129,10 @@ class ApiController extends Controller
           }
           break;
         case "Date/Time":
-          $array[$handle] = $entryModel->$handle;
+          $array[$handle] = $entry->$handle;
           break;
         case "Plain Text":
-          $array[$handle] = $entryModel->$handle;
+          $array[$handle] = $entry->$handle;
           break;
         default: 
           $array[$handle] = $type;
