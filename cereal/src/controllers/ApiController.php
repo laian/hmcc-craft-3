@@ -4,7 +4,7 @@ namespace craft\cereal\controllers;
 
 use Craft;
 
-use craft\element\Entry;
+use craft\elements\Entry;
 use craft\web\Controller;
 use craft\elements\db\EntryQuery;
 
