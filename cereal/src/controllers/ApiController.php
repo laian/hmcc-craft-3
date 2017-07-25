@@ -31,20 +31,20 @@ class ApiController extends Controller
     }
   */
   {
-    // $criteria = Entry::find()->configure($schema);
-    // unset($schema["section"]);
-    // $relatedSchemas = array_key_exists("related", $schema) ? $schema["related"] : null;
-    // if($relatedSchemas)
-    //   unset($schema->related);
-    // foreach($schema as $key => $value)
-    // {
-    //   $criteria->$key = $value;
-    // }
-    // if($relatedEntryModel)
-    //   $criteria->relatedTo = $relatedEntryModel;
+    $entryQuery = Entry::find();
+    unset($schema["section"]);
+    $relatedSchemas = array_key_exists("related", $schema) ? $schema["related"] : null;
+    if($relatedSchemas)
+      unset($schema->related);
+    foreach($schema as $key => $value)
+    {
+      $entryQuery->$key = $value;
+    }
+    if($relatedEntryModel)
+      $entryQuery->relatedTo = $relatedEntryModel;
     
-    // $entryModels = $criteria->all();
-    $entryModels = Entry::find()->configure($schema);
+    $entryModels = $entryQuery->all();
+    // $entryModels = Entry::find()->configure($schema);
     $arrays = array();
 
     foreach($entryModels as $entryModel)
