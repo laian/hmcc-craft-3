@@ -6,7 +6,7 @@ use Craft;
 
 use craft\element\Entry;
 use craft\web\Controller;
-use craft\elements\db\ElementQuery as ElementQuery;
+use craft\elements\db\ElementQuery;
 
 class ApiController extends Controller
 {
@@ -30,7 +30,7 @@ class ApiController extends Controller
     }
   */
   {
-    $criteria = ElementQuery($schema->section);
+    $criteria = new ElementQuery($schema->section);
     $relatedSchemas = array_key_exists("related", $schema) ? $schema["related"] : null;
     if($relatedSchemas)
       unset($schema->related);
