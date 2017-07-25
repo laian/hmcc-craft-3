@@ -15,9 +15,8 @@ class ApiController extends Controller
   public function actionGet()
   {
     $schema = Craft::$app->request->get("schema");
-    return gettype($schema);
 
-    //return $this->asJson($this->schemaToArray($schema));
+    return $this->asJson($this->schemaToArray($schema));
   }
 
   function schemaToArray(array $schema, $relatedEntryModel = null)
@@ -32,7 +31,7 @@ class ApiController extends Controller
     }
   */
   {
-    $criteria = new ElementQuery($schema->section);
+    $criteria = new ElementQuery($schema["section"]);
     $relatedSchemas = array_key_exists("related", $schema) ? $schema["related"] : null;
     if($relatedSchemas)
       unset($schema->related);
