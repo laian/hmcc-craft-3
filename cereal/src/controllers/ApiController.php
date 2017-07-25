@@ -31,7 +31,7 @@ class ApiController extends Controller
     }
   */
   {
-    $criteria = new EntryQuery($schema["section"]);
+    $criteria = new EntryQuery();
     // unset($schema["section"]);
     $relatedSchemas = array_key_exists("related", $schema) ? $schema["related"] : null;
     if($relatedSchemas)
