@@ -6,6 +6,7 @@ use Craft;
 
 use craft\element\Entry;
 use craft\web\Controller;
+use craft\elements\db\ElementQuery;
 
 class ApiController extends Controller
 {
@@ -29,7 +30,7 @@ class ApiController extends Controller
     }
   */
   {
-    $criteria = Craft::$app->elements->getCriteria();
+    $criteria = ElementCriteria($schema->section);
     $relatedSchemas = array_key_exists("related", $schema) ? $schema["related"] : null;
     if($relatedSchemas)
       unset($schema->related);
@@ -39,8 +40,10 @@ class ApiController extends Controller
     }
     if($relatedEntryModel)
       $criteria->relatedTo = $relatedEntryModel;
+    
     $entryModels = $criteria->find();
     $arrays = array();
+
     foreach($entryModels as $entryModel)
     {
       $array = $this->entryModelToArray($entryModel);
