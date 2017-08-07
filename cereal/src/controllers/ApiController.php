@@ -71,7 +71,7 @@ class ApiController extends Controller
     $array["id"] = $entry->id;
     foreach ($entry->getFieldLayout()->getFields() as $fieldLayout)
     {
-      $array[$fieldLayout->name] = $fieldLayout;
+      $array[$fieldLayout->name] = get_class_methods($fieldLayout.__CLASS__);
       // $field = $fieldLayout->getField();
       // $handle = $field->getAttributes()["handle"];
       // $type = $field->getFieldType()->getName();
