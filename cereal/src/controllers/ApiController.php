@@ -32,7 +32,6 @@ class ApiController extends Controller
   */
   {
     $entryQuery = Entry::find();
-    unset($schema["section"]);
     $relatedSchemas = array_key_exists("related", $schema) ? $schema["related"] : null;
     if($relatedSchemas)
       unset($schema->related);
