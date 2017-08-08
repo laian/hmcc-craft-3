@@ -70,7 +70,7 @@ class ApiController extends Controller
     $array["id"] = $entry->id;
     foreach ($entry->getFieldLayout()->getFields() as $fieldLayout)
     {
-      $array[$fieldLayout->name] = get_object_vars($fieldLayout);
+      $array[$fieldLayout->name] = implode(":", get_object_vars($fieldLayout));
       // $field = $fieldLayout->getField();
       // $handle = $field->getAttributes()["handle"];
       // $type = $field->getFieldType()->getName();
