@@ -9,10 +9,11 @@ function sermonTransformer(Entry $entry) {
     return [
         'title' => $entry->title,
         'videoUrl' => $entry->videoUrl,
-        'person' => [
-            'name' => $person->title,
-            'photo' => $person->photo
-        ]
+        'person' => gettype($person)    
+        // 'person' => [
+        //     'name' => $person->name,
+        //     'photo' => $person->photo
+        // ]
     ];
 }
 
