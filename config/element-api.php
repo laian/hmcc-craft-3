@@ -6,6 +6,7 @@ use craft\helpers\UrlHelper;
 function sermonTransformer(Entry $entry) {
     $person = Entry::find()->section('people')->relatedTo($entry)->all();
 
+    $blah = $person[0];
     return [
         'title' => $entry->title,
         'videoUrl' => $entry->videoUrl,
