@@ -8,14 +8,11 @@ function sermonTransformer(Entry $entry) {
     
     return [
         'title' => $entry->title,
-        'videoUrl' => $entry->videoUrl,
-        // 'personType' => $person->title
-        'person' => var_dump($person)
-        // 'personCount' => count($person)
-        // 'person' => [
-        //     'name' => $person->title,
-        //     'photo' => $person->photo
-        // ]
+        'videoUrl' => $entry->videoUrl,\
+        'person' => [
+            'name' => $person['title']
+            // 'photo' => $person->photo
+        ]
     ];
 }
 
