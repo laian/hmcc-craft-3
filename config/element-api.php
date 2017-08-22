@@ -10,7 +10,7 @@ function sermonTransformer(Entry $entry) {
         'title' => $entry->title,
         'videoUrl' => $entry->videoUrl,
         'person' => [
-            'name' => $person->name,
+            'name' => $person->title,
             'photo' => $person->photo
         ]
     ];
