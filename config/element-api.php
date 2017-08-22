@@ -4,7 +4,7 @@ use craft\elements\Entry;
 use craft\helpers\UrlHelper;
 
 function sermonTransformer(Entry $entry) {
-    $person = Entry::find()->section('people')->relatedTo($entry)->exists();
+    $person = Entry::find()->section('people')->relatedTo($entry)->asArray(true)->exists();
     
     return [
         'title' => $entry->title,
