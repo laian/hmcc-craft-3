@@ -9,7 +9,8 @@ function sermonTransformer(Entry $entry) {
     return [
         'title' => $entry->title,
         'videoUrl' => $entry->videoUrl,
-        'personType' => $person->title
+        // 'personType' => $person->title
+        'person' => vardump($person)
         // 'personCount' => count($person)
         // 'person' => [
         //     'name' => $person->title,
