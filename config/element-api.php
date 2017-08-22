@@ -4,12 +4,12 @@ use craft\elements\Entry;
 use craft\helpers\UrlHelper;
 
 function sermonTransformer(Entry $entry) {
-    $person = Entry::find()->section('person')->relatedTo($entry)->one();
+    $person = Entry::find()->section('people')->relatedTo($entry)->one();
 
     return [
         'title' => $entry->title,
         'videoUrl' => $entry->videoUrl,
-        'person' => gettype($person)
+        'person' => gettype($person)    
         // 'person' => [
         //     'name' => $person->name,
         //     'photo' => $person->photo
