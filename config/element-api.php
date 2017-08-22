@@ -10,7 +10,7 @@ function sermonTransformer(Entry $entry) {
         'title' => $entry->title,
         'videoUrl' => $entry->videoUrl,
         // 'personType' => $person->title
-        'person' => vardump($person)
+        'person' => var_dump($person)
         // 'personCount' => count($person)
         // 'person' => [
         //     'name' => $person->title,
