@@ -27,7 +27,8 @@
     "roave/security-advisories": "dev-master",
     "ext-mbstring": "*",
     "ext-gd": "*",
-    "craft/cereal": "^1.0"
+    "craft/cereal": "^1.0",
+    "craftcms/element-api": "v2.x-dev"
   },
   "scripts": {
     "post-root-package-install": [
