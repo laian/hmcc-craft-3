@@ -4,15 +4,21 @@ use craft\elements\Entry;
 use craft\helpers\UrlHelper;
 
 function sermonTransformer(Entry $entry) {
+    $person = Entry::find()->section('person')->relatedTo($entry)->one();
+
     return [
         'title' => $entry->title,
-        'videoUrl' => $entry->videoUrl
+        'videoUrl' => $entry->videoUrl,
+        'person' => [
+            'name' => $person->name,
+            'photo' => $person->photo
+        ]
     ];
 }
 
 return [
     'endpoints' => [
-        'sermons.json' => [
+        'api/sermons.json' => [
             'elementType' => Entry::class,
             'criteria' => ['section' => 'sermons'],
             'transformer' => sermonTransformer
